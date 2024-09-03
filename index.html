@@ -7,13 +7,28 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <!-- <header>
         <h1>Expense Splitter</h1>
-    </header>
-    <nav>
-        <a href="#">Empty</a>
-        <a href="#">Empty</a>
-    </nav>
+    </header> -->
+	<nav>
+		<p class="welcome">Log in to get started</p>
+		<img src="logo.png" alt="Logo" class="logo" />
+		<form class="login">
+		  <input
+			type="text"
+			placeholder="user"
+			class="login__input login__input--user"
+		  />
+		  <!-- In practice, use type="password" -->
+		  <input
+			type="password"
+			placeholder="PIN"
+			maxlength="4"
+			class="login__input login__input--pin"
+		  />
+		  <button class="login__btn">&rarr;</button>
+		</form>
+	  </nav>
     <main class="app">
 		 <!-- ACTIONS -->
 		<div class="actions">

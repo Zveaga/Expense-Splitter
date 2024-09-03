@@ -1,29 +1,80 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+  
+html {
+	font-size: 62.5%;
+	box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+	font-family: "Poppins", sans-serif;
+	color: #444;
+	background-color: #f3f3f3;
+	height: 100vh;
+	padding: 2rem;
 }
-
-header {
-    width: 100%;
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
+  
+  nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 2rem;
 }
-
-nav {
-    margin: 20px 0;
+  
+.welcome {
+	font-size: 1.9rem;
+	font-weight: 500;
 }
-
-nav a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
+  
+.logo {
+	height: 5.25rem;
+}
+  
+.login {
+	display: flex;
+}
+  
+.login__input {
+	border: none;
+	padding: 0.5rem 2rem;
+	font-size: 1.6rem;
+	font-family: inherit;
+	text-align: center;
+	width: 12rem;
+	border-radius: 10rem;
+	margin-right: 1rem;
+	color: inherit;
+	border: 1px solid #fff;
+	transition: all 0.3s;
+}
+  
+.login__input:focus {
+	outline: none;
+	border: 1px solid #ccc;
+}
+  
+.login__input::placeholder {
+	color: #bbb;
+}
+  
+.login__btn {
+	border: none;
+	background: none;
+	font-size: 2.2rem;
+	color: inherit;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+  
+.login__btn:hover,
+.login__btn:focus,
+.btn--sort:hover,
+.btn--sort:focus {
+	outline: none;
+	color: #777;
 }
 
 main {
@@ -46,9 +97,10 @@ main {
 
 .actions {
 	grid-row: 2 / span 3;
-	background-color: #f0f0f0;
+	background-color: #ffffff;
 	border-radius: 1rem;
 	overflow: scroll;
+	margin-top: 2rem;
 }
 
 .actions__row {
@@ -69,4 +121,82 @@ main {
 .actions__amount {
 	font-size: 1.3rem;
 	margin-left: auto;
+}
+
+.form {
+	display: grid;
+	grid-template-columns: 2.5fr 2.5fr 1fr;
+	grid-template-rows: auto auto;
+	gap: 3rem 1rem;
+}
+  
+/* Exceptions for interst */
+.form.form--loan {
+	grid-template-columns: 2.5fr 1fr 2.5fr;
+}
+.form__label--loan {
+	grid-row: 2;
+}
+/* End exceptions */
+  
+.form__input {
+	width: 100%;
+	border: none;
+	background-color: rgba(255, 255, 255, 0.4);
+	font-family: inherit;
+	font-size: 1.5rem;
+	text-align: center;
+	color: #333;
+	padding: 0.3rem 1rem;
+	border-radius: 0.7rem;
+	transition: all 0.3s;
+}
+  
+.form__input:focus {
+	outline: none;
+	background-color: rgba(255, 255, 255, 0.6);
+}
+  
+.form__label {
+	font-size: 1.3rem;
+	text-align: center;
+}
+  
+.form__btn {
+	border: none;
+	border-radius: 0.7rem;
+	font-size: 1.8rem;
+	background-color: #fff;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+  
+.form__btn:focus {
+	outline: none;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+/* OPERATIONS */
+.event {
+	border-radius: 0.5rem;
+	padding: 1rem 5rem;
+	color: #333;
+}
+
+h2 {
+	margin-bottom: 1.5rem;
+	font-size: 1.7rem;
+	font-weight: 600;
+	color: #333;
+}
+
+/* .event__date {
+	background-image: linear-gradient(to top left, #ffb003, #ffcb03);
+} */
+
+.enter__event {
+	background-image: linear-gradient(to top left, #cfcfcf, #cfcfcf);
+	border-radius: 1rem;
+	margin-top: 4rem;
 }
