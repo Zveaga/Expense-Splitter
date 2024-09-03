@@ -26,14 +26,141 @@
 		  <button class="login__btn">&rarr;</button>
 		</form>
 	  </nav>
-    <main class="enter__events">
+    
+	  <main class="enter__events">
+		<div class="enter__event">
+			<!-- Date -->
+			<div class="event event__date">
+				<h2>Date</h2>
+				<form class="form form__event__date">
+					<input type="date" class="form__input form__input__date"/>
+					<button class="form__btn form__btn__date">&rarr;</button>
+				</form>
+			</div>
+	
+			<!-- Description -->
+			<div class="event event__description">
+				<h2>Description</h2>
+				<form class="form form__event__description">
+					<input type="text" class="form__input form__input__description" placeholder="Enter a description"/>
+					<button class="form__btn form__btn__description">&rarr;</button>
+				</form>
+			</div>
+	
+			<!-- Amount -->
+			<div class="event event__amount">
+				<h2>Amount</h2>
+				<form class="form form__event__amount">
+					<input type="number" class="form__input form__input__amount" placeholder="Enter the amount" step="0.01"/>
+					<select class="form__input form__input__currency">
+						<option value="USD">USD</option>
+						<option value="EUR">EUR</option>
+						<option value="GBP">GBP</option>
+						<!-- Add other currencies as needed -->
+					</select>
+					<button class="form__btn form__btn__amount">&rarr;</button>
+				</form>
+			</div>
+	
+			<!-- Paid By -->
+			<div class="event event__paid__by">
+				<h2>Paid by</h2>
+				<form class="form form__event__paid_by">
+					<select class="form__input form__input__paid_by" id="paidBySelect">
+						<!-- JavaScript will populate this dropdown -->
+					</select>
+					<button class="form__btn form__btn__paid_by">&rarr;</button>
+				</form>
+			</div>
+	
+			<!-- Persons Involved -->
+			<div class="event event__persons__involved">
+				<h2>Persons involved</h2>
+				<form class="form form__event__persons__involved">
+					<select class="form__input form__input__persons__involved" id="personsInvolvedSelect">
+						<!-- JavaScript will populate this dropdown -->
+					</select>
+					<button type="button" id="addPersonBtn">Add Person</button>
+				</form>
+				<ul id="personsInvolvedList">
+					<!-- Selected persons will be displayed here -->
+				</ul>
+			</div>
+	
+			<!-- Split Method -->
+			<div class="event event__split_method">
+				<h2>Split method</h2>
+				<form class="form form__event__split__method">
+					<select class="form__input form__input__split__method">
+						<option value="equal">Equally</option>
+						<option value="exact">By Exact Amount</option>
+						<option value="percent">By Percentages</option>
+					</select>
+					<button class="form__btn form__btn__split_method">&rarr;</button>
+				</form>
+			</div>
+		</div>
+	</main>
+	
+	<script>
+		// JavaScript for populating the "Paid by" and "Persons Involved" dropdowns
+		const persons = ['Alice', 'Bob', 'Charlie', 'Diana']; // Example array of persons
+	
+		// Populate the "Paid by" dropdown
+		const paidBySelect = document.getElementById('paidBySelect');
+		persons.forEach(person => {
+			const option = document.createElement('option');
+			option.value = person;
+			option.textContent = person;
+			paidBySelect.appendChild(option);
+		});
+	
+		// Populate the "Persons involved" dropdown
+		const personsInvolvedSelect = document.getElementById('personsInvolvedSelect');
+		persons.forEach(person => {
+			const option = document.createElement('option');
+			option.value = person;
+			option.textContent = person;
+			personsInvolvedSelect.appendChild(option);
+		});
+	
+		// Functionality to add multiple persons to the "Persons involved" list
+		const personsInvolvedList = document.getElementById('personsInvolvedList');
+		const addPersonBtn = document.getElementById('addPersonBtn');
+	
+		addPersonBtn.addEventListener('click', () => {
+			const selectedPerson = personsInvolvedSelect.value;
+			if (selectedPerson && !isPersonAlreadyAdded(selectedPerson)) {
+				const listItem = document.createElement('li');
+				listItem.textContent = selectedPerson;
+				personsInvolvedList.appendChild(listItem);
+			}
+		});
+	
+		// Check if the person is already added to prevent duplicates
+		function isPersonAlreadyAdded(person) {
+			const listItems = personsInvolvedList.getElementsByTagName('li');
+			for (let i = 0; i < listItems.length; i++) {
+				if (listItems[i].textContent === person) {
+					return true;
+				}
+			}
+			return false;
+		}
+	</script>
+	
+
+
+
+
+<!-- <main class="enter__events">
 		<div class="enter__event">
 			<div class="event event__date">
 				<h2>Date</h1>
 				<form class="form form__event__date">
 					<input type="text" class="form__input form__input__date"/>
 					<button class="form__btn form__btn__date">&rarr;</button>
-					<!-- <label class="form__label"></label> -->
+					<label class="form__label"></label>
 				</form>
 			</div>
 			<div class="event event__description">
@@ -73,7 +200,4 @@
 			</div>
 		</div>
     </main>
-    <script src="script.js"></script>
-</body>
-</html>
-
+    <script src="script.js"></script> -->
