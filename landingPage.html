@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="stylesLanding.css">
+</head>
+<body>
+    <div class="landing-container">
+        <h1>Welcome!</h1>
+        <p>Please choose an option to continue:</p>
+        <div class="button-container">
+            <button id="loginBtn" class="action-btn">Log In</button>
+            <button id="createAccountBtn" class="action-btn">Create New Account</button>
+        </div>
+    </div>
+
+    <!-- Hidden Sections for Login and Create Account Forms -->
+    <section id="loginSection" class="account-section" style="display: none;">
+		<h2>Log In</h2>
+        <form class="login">
+			<input
+			type="text"
+			placeholder="Username"
+			class="login__input login__input--user"
+            />
+            <input
+			type="password"
+			placeholder="PIN"
+			maxlength="4"
+			class="login__input login__input--pin"
+            />
+            <button class="login__btn">Log In</button>
+			<button id="backToLandingBtnCreate" class="action-btn back-btn">Back</button>
+        </form>
+    </section>
+
+    <section id="createAccountSection" class="account-section" style="display: none;">
+		<button id="backToLandingBtnCreate" class="action-btn back-btn">Back</button>
+		<h2>Create a New Account</h2>
+        <form class="create-account">
+            <input
+                type="text"
+                placeholder="Username"
+                class="create-account__input create-account__input--user"
+            />
+            <input
+                type="password"
+                placeholder="Password"
+                class="create-account__input create-account__input--password"
+            />
+            <input
+                type="password"
+                placeholder="Confirm Password"
+                class="create-account__input create-account__input--confirm-password"
+            />
+            <button class="create-account__btn">Create Account</button>
+        </form>
+    </section>
+
+    <script>
+        // JavaScript to toggle the visibility of the login and create account sections
+        const loginBtn = document.getElementById('loginBtn');
+        const createAccountBtn = document.getElementById('createAccountBtn');
+        const loginSection = document.getElementById('loginSection');
+        const createAccountSection = document.getElementById('createAccountSection');
+		const landingContainer = document.querySelector('.landing-container');
+
+        // Show Login Form
+        loginBtn.addEventListener('click', () => {
+            loginSection.style.display = 'block';
+            createAccountSection.style.display = 'none';
+            landingContainer.style.display = 'none';
+        });
+
+        // Show Create Account Form
+        createAccountBtn.addEventListener('click', () => {
+            createAccountSection.style.display = 'block';
+            loginSection.style.display = 'none';
+            landingContainer.style.display = 'none';
+        });
+    </script>
+	<script src="script.js"></script>
+</body>
+</html>
