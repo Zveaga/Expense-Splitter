@@ -99,13 +99,13 @@ main {
     border: 1px solid #ccc;
 }
 
-.actions {
+/* .actions {
 	grid-row: 2 / span 3;
 	background-color: #ffffff;
 	border-radius: 1rem;
 	overflow: scroll;
 	margin-top: 2rem;
-}
+} */
 
 .actions__row {
 	padding: 2rem 4rem;
@@ -203,4 +203,76 @@ h2 {
 	background-image: linear-gradient(to top left, #cfcfcf, #cfcfcf);
 	border-radius: 1rem;
 	margin-top: 4rem;
+}
+
+.user-summary {
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 1rem;
+}
+
+.user__row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.user__name {
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.user__status {
+    font-size: 1.4rem;
+    color: #555;
+}
+
+.action-buttons {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+	margin-bottom: 2rem;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.actions {
+    margin-top: 0rem;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    /* overflow: scroll; */
+}
+
+.actions__row {
+    padding: 2rem 4rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #d5d5d5;
+}
+
+.actions__date {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #666;
+    margin-right: 2rem;
+}
+
+.actions__amount {
+    font-size: 1.3rem;
+    margin-left: auto;
 }

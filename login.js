@@ -1,5 +1,5 @@
 'use strict'
-
+// console.log(accounts);
 //----------------HTML ELEMENTS----------------//
 //--Landing Section--//
 const landingContainer = document.querySelector('.landing-container');
@@ -18,6 +18,17 @@ const btnCreateAccount = document.querySelector('.create-account__btn');
 const inputCreateAccountUsername = document.querySelector('.create-account__input--user');
 const inputCreateAccountPassword = document.querySelector('.create-account__input--password');
 const inputCreateAccountConfirmPassword = document.querySelector('.create-account__input--confirm-password');
+
+//----------------FUNCTIONS----------------//
+const createAccount = function (username, pin)
+{
+	const newUser = {
+		username: username,
+		pin: pin,
+	};
+	accounts.push(newUser);
+	localStorage.setItem('currentAccount', JSON.stringify(newUser));
+};
 
 //----------------EVENT LISTENERS----------------//
 //--Show Login Form--//
@@ -51,17 +62,6 @@ btnLogin.addEventListener('click', function(e) {
 });
 
 //--Create Account--//
-
-const createAccount = function (username, pin)
-{
-	const newUser = {
-		username: username,
-		pin: pin,
-	};
-	accounts.push(newUser);
-};
-
-
 btnCreateAccount.addEventListener('click', function(e) {
 	e.preventDefault();
 	const username = inputCreateAccountUsername.value;
@@ -74,16 +74,15 @@ btnCreateAccount.addEventListener('click', function(e) {
 		alert('User already exists!');
 	else if (pin !== confirmPin)
 		alert('Passwords do not match!')
-	else if (pin.length < 4)
-		alert('Password too short!')
+	// else if (pin.length < 4)
+	// 	alert('Password too short!')
 	else
 	{
 		console.log(accounts);
-		console.log('Creating user...');
 		createAccount(username, pin);
 		console.log(accounts);
 
+		// window.location.assign('index.html');
 	}
 
-	//window.location.assign('index.html');
 });

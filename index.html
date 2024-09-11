@@ -30,7 +30,27 @@
 		</form>
 	  </nav> -->
     <main class="app">
+		<!-- User Summary (Info at the top) -->
+		<div class="user-summary">
+			<h2>User Balances</h2>
+			<div class="user__row">
+				<span class="user__name">John Doe</span>
+				<span class="user__status">You owe 150€</span>
+			</div>
+			<div class="user__row">
+				<span class="user__name">Jane Smith</span>
+				<span class="user__status">You are owed 50€</span>
+			</div>
+		</div>
+
+		<!-- Buttons (Next to the user summary or below) -->
+		<div class="action-buttons">
+			<button class="btn btn-settle">Settle Up</button>
+			<button class="btn btn-convert">Convert to USD</button>
+			<button class="btn btn-totals">Show Totals</button>
+		</div>
 		 <!-- ACTIONS -->
+		<h2>Transactions: </h2>
 		<div class="actions">
 			<div class="actions__row">
 				<div class="actions__date">12 June 2024</div>
@@ -46,7 +66,6 @@
 
 
     </main>
-	<script src="accounts.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
