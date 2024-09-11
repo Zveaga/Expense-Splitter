@@ -32,55 +32,33 @@
 			class="login__input login__input--pin"
             />
             <button class="login__btn">Log In</button>
-			<button id="backToLandingBtnCreate" class="action-btn back-btn">Back</button>
+			<button class="action-btn back-btn">Back</button>
         </form>
     </section>
 
     <section id="createAccountSection" class="account-section" style="display: none;">
-		<button id="backToLandingBtnCreate" class="action-btn back-btn">Back</button>
 		<h2>Create a New Account</h2>
         <form class="create-account">
-            <input
-                type="text"
-                placeholder="Username"
-                class="create-account__input create-account__input--user"
+			<input
+			type="text"
+			placeholder="Username"
+			class="create-account__input create-account__input--user"
             />
             <input
-                type="password"
-                placeholder="Password"
-                class="create-account__input create-account__input--password"
+			type="password"
+			placeholder="Password"
+			class="create-account__input create-account__input--password"
             />
             <input
-                type="password"
-                placeholder="Confirm Password"
-                class="create-account__input create-account__input--confirm-password"
+			type="password"
+			placeholder="Confirm Password"
+			class="create-account__input create-account__input--confirm-password"
             />
             <button class="create-account__btn">Create Account</button>
+			<button class="action-btn back-btn">Back</button>
         </form>
     </section>
 
-    <script>
-        // JavaScript to toggle the visibility of the login and create account sections
-        const loginBtn = document.getElementById('loginBtn');
-        const createAccountBtn = document.getElementById('createAccountBtn');
-        const loginSection = document.getElementById('loginSection');
-        const createAccountSection = document.getElementById('createAccountSection');
-		const landingContainer = document.querySelector('.landing-container');
-
-        // Show Login Form
-        loginBtn.addEventListener('click', () => {
-            loginSection.style.display = 'block';
-            createAccountSection.style.display = 'none';
-            landingContainer.style.display = 'none';
-        });
-
-        // Show Create Account Form
-        createAccountBtn.addEventListener('click', () => {
-            createAccountSection.style.display = 'block';
-            loginSection.style.display = 'none';
-            landingContainer.style.display = 'none';
-        });
-    </script>
 	<script src="accounts.js"></script>
 	<script src="login.js"></script>
 </body>
