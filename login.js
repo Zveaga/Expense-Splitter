@@ -1,6 +1,7 @@
 'use strict'
 // console.log(accounts);
 //----------------HTML ELEMENTS----------------//
+const app = document.querySelector('.app');
 //--Landing Section--//
 const landingContainer = document.querySelector('.landing-container');
 const btnLoginWelcome = document.getElementById('loginBtn');
@@ -55,7 +56,10 @@ btnLogin.addEventListener('click', function(e) {
 	{
 		// console.log(`Current Account: ${currentAccount.username}`);
 		localStorage.setItem('currentAccount', JSON.stringify(currentAccount));
-		window.location.assign('index.html');
+		app.style.display = 'block';
+		landingContainer.style.display = 'none';
+		loginSection.style.display = 'none';
+		// window.location.assign('index.html');
 		console.log('Logged In!')
 	}
 	// window.location.href = 'index.html';
@@ -80,6 +84,9 @@ btnCreateAccount.addEventListener('click', function(e) {
 	{
 		console.log(accounts);
 		createAccount(username, pin);
+		app.style.display = 'block';
+		landingContainer.style.display = 'none';
+		createAccountSection.style.display = 'none';
 		console.log(accounts);
 
 		// window.location.assign('index.html');
